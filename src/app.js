@@ -12,7 +12,6 @@ const movieInfo = require('./utils/movieInfo')
 // express top level function defination
 const app = express()
 
-// const url = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyA2A-r9iHvuIW7LNGTzsrgXjbECyoJDGzY&cx=012666117539404587636:nr5md7eqmox&q='
 
 app.use(express.static(vars.publicPath))
 
@@ -25,28 +24,7 @@ hbs.registerPartials(vars.partialsPath)
 // server.....
 
 app.get('', (req, res) => {
-    movieLink(vars.movieName, (error, data)=>{
-        if(error){
-            res.send(error)
-        }
-        else{
-            var title = ''
-            for(let x=27;x<37;x++){
-                if(data[x] === '/'){
-                    break;
-                }
-                title = title + data[x]
-            }
-            movieInfo(title, (error, data)=>{
-                if(error){
-                    res.send(error)
-                }
-                else{
-                    res.render('index', data)
-                }
-            })
-        }
-    })
+    res.render('index')
 })
 app.get('/movie', (req, res)=>{
     if(!req.query.search){

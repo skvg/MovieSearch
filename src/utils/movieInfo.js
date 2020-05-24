@@ -8,9 +8,9 @@ const movieInfo = (title, callback)=>{
 
     request({url: url, json: true}, (error, response)=>{
         if(error){
-            callback('there is something wrong !!', undefined)
-        } else if(response.body.error){
-            callback(response.body.error, undefined)
+            callback('Check Your Network Connection !!', undefined)
+        } else if(response.body.Response === "False"){
+            callback('Try Another Search', undefined)
         } else{
             callback(undefined ,response.body)
         }

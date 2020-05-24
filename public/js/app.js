@@ -1,6 +1,3 @@
-
-console.log('here i am')
-
 const searchForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#a')
@@ -23,12 +20,21 @@ searchForm.addEventListener('submit', (e)=>{
     fetch('http://127.0.0.1:3000/movie?search=' + movieName).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
-                messageOne.textContent = 'something wrong'
-                messageTwo.textContent = 'something wrong'
-                messageThree.textContent ='something wrong'
-                messageFour.textContent ='something wrong'
-                messageFive.textContent ='something wrong'
-                messageSix.textContent ='something wrong'
+                messageSeven.src = 'images/ooops.png'
+                messageOne.textContent = data.error
+                messageTwo.textContent = 'Realesed On: #'
+                messageThree.textContent ='IMDB Rating: #'
+                messageFour.textContent ='Genre: #'
+                messageFive.textContent ='Director: #'
+                messageSix.textContent ='Movie Plot: #'
+            } else if(data.data == undefined){
+                messageSeven.src = 'images/ooops.png'
+                messageOne.textContent = 'Try Another Search'
+                messageTwo.textContent = 'Realesed On: #'
+                messageThree.textContent ='IMDB Rating: #'
+                messageFour.textContent ='Genre: #'
+                messageFive.textContent ='Director: #'
+                messageSix.textContent ='Movie Plot: #'
             }
             else{
                 messageSeven.src = data.data.Poster

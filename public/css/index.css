@@ -54,6 +54,11 @@ img{
   font-size: 10px;
   text-align: center;
 }
+
+#a{
+  background-color: #444;
+  color: #ddd;
+}
 @media screen and (min-width: 700px){
   body{
     max-width: 300px;

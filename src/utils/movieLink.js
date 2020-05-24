@@ -10,9 +10,9 @@ const movieLink = (movieName, callback)=>{
     const url = movieUrl + movieName
     request({url: url, json: true}, (error, response)=>{
         if(error){
-            callback('There is something wrong !!!', undefined)
-        } else if(response.body.error){
-            callback(response.body.error, undefined)
+            callback('Check Your Network Connection !!', undefined)
+        } else if(response.body.searchInformation.totalResults == 0){
+            callback('No Result Found  :(', undefined)
         } else{
             callback(undefined, response.body.items[0].link)
         }
