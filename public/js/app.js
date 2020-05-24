@@ -17,7 +17,7 @@ searchForm.addEventListener('submit', (e)=>{
     messageFive.textContent ='Director: Loading.....'
     messageSix.textContent ='Movie Plot: Loading.....'
     const movieName = search.value
-    fetch('http://127.0.0.1:3000/movie?search=' + movieName).then((response)=>{
+    fetch('/movie?search=' + movieName).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 messageSeven.src = 'images/ooops.png'

@@ -67,5 +67,5 @@ app.get('/about', (req, res) => {
 })
 // running the server on port
 app.listen(vars.port, () => {
-    console.log(`server is running on ${vars.host}:${vars.port}`)
+    console.log(`server is running on ${vars.host}`)
 })
