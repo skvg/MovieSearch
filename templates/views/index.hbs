@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+
+    <body>
+        {{>header}}
+        <form>
+            <input placeholder="Type movie name">
+            <button>Search</button>
+        </form>
+        
+        <img id="j" src="{{Poster}}">
+        <h2 id="a">Movie Name: {{Title}}</h2>
+        <h2 id="s">Realesed On: {{Released}}</h2>
+        <h2 id="d">IMDB Rating: {{imdbRating}}</h2>
+        <h2 id="f">Genre: {{Genre}}</h2>
+        <h2 id="g">Director: {{Director}}</h2>
+        <h2 id="h">Movie Plot: {{Plot}}</h2>
+        {{>footer}}
+        <script src="/js/app.js"></script>
+    </body>
+</html>
