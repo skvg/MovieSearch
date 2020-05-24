@@ -1,8 +1,9 @@
 const request = require('request')
 
-const googleApiToken = 'AIzaSyCnPynXSKKWVv1p7BsHanecGPzep-OBgTE'
+const googleApiTokenOne = 'AIzaSyCnPynXSKKWVv1p7BsHanecGPzep-OBgTE'
+const googleApiTokenTwo = 'AIzaSyA2A-r9iHvuIW7LNGTzsrgXjbECyoJDGzY'
 const googleSearchEngine = '012666117539404587636:nr5md7eqmox'
-const movieUrl = 'https://www.googleapis.com/customsearch/v1?key=' + googleApiToken + '&cx=' + googleSearchEngine + '&q='
+const movieUrl = 'https://www.googleapis.com/customsearch/v1?key=' + googleApiTokenTwo + '&cx=' + googleSearchEngine + '&q='
 
 
 const movieLink = (movieName, callback)=>{

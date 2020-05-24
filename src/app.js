@@ -22,13 +22,6 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(vars.partialsPath)
 
 
-const title = 'tt0422091'
-// setTimeout(function(){
-//     for(let x=27;x<37;x++){
-//         apiUrl = apiUrl+title[x]
-//     }
-// },0)
-
 // server.....
 
 app.get('', (req, res) => {
@@ -38,7 +31,10 @@ app.get('', (req, res) => {
         }
         else{
             var title = ''
-            for(let x=27;x<36;x++){
+            for(let x=27;x<37;x++){
+                if(data[x] === '/'){
+                    break;
+                }
                 title = title + data[x]
             }
             movieInfo(title, (error, data)=>{
@@ -67,7 +63,10 @@ app.get('/movie', (req, res)=>{
         }
         else{
             var title = ''
-            for(let x=27;x<36;x++){
+            for(let x=27;x<37;x++){
+                if(data[x] === '/'){
+                    break;
+                }
                 title = title + data[x]
             }
             movieInfo(title, (error, data)=>{
